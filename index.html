@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isa, você é meu amor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,400;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --creme: #fbf6ee;
+    --bege: #efe3d3;
+    --rosa: #c98f8f;        /* rosa seco */
+    --rosa-escuro: #a56b6b;
+    --texto: #5a4440;
+    --branco: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: linear-gradient(180deg, var(--creme) 0%, var(--bege) 100%);
+    color: var(--texto);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    padding-bottom: 110px; /* espaço para o player */
+  }
+
+  /* ---------- Cabeçalho ---------- */
+  header {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.2rem;
+  }
+  header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: clamp(2.8rem, 10vw, 5.5rem);
+    color: var(--rosa-escuro);
+    line-height: 1.15;
+    animation: entrada 1.6s ease both; /* única animação de entrada da página */
+  }
+  @keyframes entrada { from { opacity: 0; letter-spacing: .15em; } to { opacity: 1; letter-spacing: 0; } }
+
+  /* ---------- Carta ---------- */
+  .carta {
+    max-width: 620px;
+    margin: 0 auto 5rem;
+    padding: 3rem 2rem;
+    background: var(--branco);
+    border-radius: 6px;
+    box-shadow: 0 18px 50px rgba(165, 107, 107, .15);
+  }
+  .carta p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.05rem, 3.6vw, 1.25rem);
+    margin-bottom: 1.6rem;
+  }
+  .carta .final {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    color: var(--rosa);
+    margin: 2.4rem 0 0;
+  }
+
+  /* ---------- Galeria ---------- */
+  .galeria { max-width: 960px; margin: 0 auto; padding: 0 1.2rem; }
+  .galeria h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 7vw, 3rem);
+    text-align: center;
+    color: var(--rosa-escuro);
+    margin-bottom: 2rem;
+  }
+  .grid { column-count: 2; column-gap: 1rem; }
+  .grid figure { break-inside: avoid; margin-bottom: 1rem; overflow: hidden; border-radius: 4px; background: var(--bege); }
+  .grid img { width: 100%; height: auto; display: block; transition: transform .6s ease; }
+  .grid figure:hover img { transform: scale(1.03); }
+  @media (max-width: 480px) { .grid { column-gap: .6rem; } .grid figure { margin-bottom: .6rem; } }
+
+  /* ---------- Player ---------- */
+  .player {
+    position: fixed;
+    left: 50%; bottom: 16px;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 420px;
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 18px 10px 10px;
+    background: rgba(255, 255, 255, .92);
+    backdrop-filter: blur(8px);
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(165, 107, 107, .25);
+  }
+  .player button {
+    width: 46px; height: 46px; flex: none;
+    border: 0; border-radius: 50%;
+    background: var(--rosa); color: var(--branco);
+    font-size: 1.1rem; cursor: pointer;
+  }
+  .player button:hover { background: var(--rosa-escuro); }
+  .player button:focus-visible { outline: 3px solid var(--rosa-escuro); outline-offset: 2px; }
+  .player .info { font-size: .9rem; line-height: 1.3; }
+  .player .info strong { font-family: 'Playfair Display', serif; font-weight: 400; display: block; }
+
+  @media (prefers-reduced-motion: reduce) {
+    header h1 { animation: none; }
+    .grid img { transition: none; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ===== CABEÇALHO ===== -->
+<header>
+  <!-- ✏️ TROQUE o nome/título aqui -->
+  <h1>Isa, você é meu amor</h1>
+</header>
+
+<!-- ===== CARTA ===== -->
+<main>
+  <article class="carta">
+    <!-- ✏️ EDITE o texto da carta nos parágrafos abaixo -->
+    <p>Meu amor, eu só quero que você sempre se lembre que eu te amo muito mesmo, quero te fazer feliz sempre.</p>
+    <p>Amo seu jeito, seu sorriso, cada detalhe que faz você única, eu te amo muito, sempre vou te proteger e te cuidar.</p>
+    <p class="final">Eu te amo</p>
+  </article>
+
+  <!-- ===== GALERIA DE FOTOS ===== -->
+  <section class="galeria">
+    <h2>Nossos momentos</h2>
+    <div class="grid">
+      <!-- 📷 Para trocar uma foto, substitua o arquivo na pasta "fotos"
+           (mantendo o mesmo nome) ou mude o src abaixo. -->
+      <figure><img src="fotos/foto1.jpg" alt="Nós dois em frente ao espelho"></figure>
+      <figure><img src="fotos/foto2.jpg" alt="Isa com a rosa" loading="lazy"></figure>
+      <figure><img src="fotos/foto3.jpg" alt="Nós dois fazendo careta" loading="lazy"></figure>
+      <figure><img src="fotos/foto4.jpg" alt="Nós dois de novo fazendo careta" loading="lazy"></figure>
+    </div>
+  </section>
+</main>
+
+<!-- ===== PLAYER DE MÚSICA ===== -->
+<div class="player">
+  <button id="botao" aria-label="Tocar música">▶</button>
+  <div class="info">
+    <strong>Cama de Casal</strong>
+    Hungria
+  </div>
+
+  <!-- 🎵 Coloque o arquivo da música (mp3) na mesma pasta deste index.html
+       com o nome "musica.mp3" (já está incluído na pasta). -->
+  <audio id="audio" src="musica.mp3" loop preload="auto"></audio>
+</div>
+
+
+<script>
+  // ⏱️ Início da música em segundos: 3:28 = 3*60 + 28 = 208
+  const INICIO = 208;
+
+  const audio = document.getElementById('audio');
+  const botao = document.getElementById('botao');
+  let iniciou = false;
+
+  botao.addEventListener('click', () => {
+    if (audio.paused) {
+      // Na primeira vez, pula para 3:28
+      if (!iniciou) {
+        const pular = () => { audio.currentTime = INICIO; };
+        if (audio.readyState >= 1) pular();
+        else audio.addEventListener('loadedmetadata', pular, { once: true });
+        iniciou = true;
+      }
+      audio.play();
+      botao.textContent = '❚❚';
+      botao.setAttribute('aria-label', 'Pausar música');
+    } else {
+      audio.pause();
+      botao.textContent = '▶';
+      botao.setAttribute('aria-label', 'Tocar música');
+    }
+  });
+
+  // Ao repetir (loop), volta para 3:28 em vez do começo
+  audio.addEventListener('ended', () => { audio.currentTime = INICIO; audio.play(); });
+</script>
+
+</body>
+</html>
