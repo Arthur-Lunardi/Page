@@ -78,11 +78,14 @@
     color: var(--rosa-escuro);
     margin-bottom: 2rem;
   }
-  .grid { column-count: 2; column-gap: 1rem; }
-  .grid figure { break-inside: avoid; margin-bottom: 1rem; overflow: hidden; border-radius: 4px; background: var(--bege); }
-  .grid img { width: 100%; height: auto; display: block; transition: transform .6s ease; }
+  .galeria { max-width: 720px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .grid figure { overflow: hidden; border-radius: 4px; background: var(--bege); }
+  .grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
   .grid figure:hover img { transform: scale(1.03); }
-  @media (max-width: 480px) { .grid { column-gap: .6rem; } .grid figure { margin-bottom: .6rem; } }
+  .retrato { aspect-ratio: 9 / 16; }      /* fotos em pé */
+  .paisagem { aspect-ratio: 16 / 9; }     /* fotos deitadas */
+  @media (max-width: 480px) { .grid { gap: .6rem; } }
 
   /* ---------- Player ---------- */
   .player {
@@ -139,10 +142,10 @@
     <div class="grid">
       <!-- 📷 Para trocar uma foto, substitua o arquivo na pasta "fotos"
            (mantendo o mesmo nome) ou mude o src abaixo. -->
-      <figure><img src="fotos/foto1.jpg" alt="Nós dois em frente ao espelho"></figure>
-      <figure><img src="fotos/foto2.jpg" alt="Isa com a rosa" loading="lazy"></figure>
-      <figure><img src="fotos/foto3.jpg" alt="Nós dois fazendo careta" loading="lazy"></figure>
-      <figure><img src="fotos/foto4.jpg" alt="Nós dois de novo fazendo careta" loading="lazy"></figure>
+      <figure class="retrato"><img src="fotos/foto1.jpg" alt="Nós dois em frente ao espelho"></figure>
+      <figure class="retrato"><img src="fotos/foto2.jpg" alt="Isa com a rosa" loading="lazy"></figure>
+      <figure class="paisagem"><img src="fotos/foto3.jpg" alt="Nós dois fazendo careta" loading="lazy"></figure>
+      <figure class="paisagem"><img src="fotos/foto4.jpg" alt="Nós dois de novo fazendo careta" loading="lazy"></figure>
     </div>
   </section>
 </main>
